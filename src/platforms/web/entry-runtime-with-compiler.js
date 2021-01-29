@@ -15,12 +15,13 @@ const idToTemplate = cached(id => {
 })
 
 const mount = Vue.prototype.$mount
+debugger;
 Vue.prototype.$mount = function (
   el?: string | Element,
   hydrating?: boolean
 ): Component {
   el = el && query(el)
-
+	debugger
   /* istanbul ignore if */
   if (el === document.body || el === document.documentElement) {
     process.env.NODE_ENV !== 'production' && warn(
@@ -36,7 +37,8 @@ Vue.prototype.$mount = function (
     if (template) {
       if (typeof template === 'string') {
         if (template.charAt(0) === '#') {
-          template = idToTemplate(template)
+        	debugger
+        template = idToTemplate(template)
           /* istanbul ignore if */
           if (process.env.NODE_ENV !== 'production' && !template) {
             warn(
@@ -57,6 +59,7 @@ Vue.prototype.$mount = function (
       template = getOuterHTML(el)
     }
     if (template) {
+    	debugger
       /* istanbul ignore if */
       if (process.env.NODE_ENV !== 'production' && config.performance && mark) {
         mark('compile')
@@ -79,6 +82,7 @@ Vue.prototype.$mount = function (
       }
     }
   }
+  debugger
   return mount.call(this, el, hydrating)
 }
 

@@ -34,11 +34,13 @@ extend(Vue.options.components, platformComponents)
 Vue.prototype.__patch__ = inBrowser ? patch : noop
 
 // public mount method
+Vue.namek = 'k'
 Vue.prototype.$mount = function (
   el?: string | Element,
   hydrating?: boolean
 ): Component {
   el = el && inBrowser ? query(el) : undefined
+	debugger
   return mountComponent(this, el, hydrating)
 }
 
@@ -72,5 +74,5 @@ if (inBrowser) {
     }
   }, 0)
 }
-
+debugger
 export default Vue

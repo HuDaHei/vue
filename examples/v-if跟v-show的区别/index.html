@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+    <header>
+    <meta charset="utf-8" />
+    <script src="./../../dist/vue.js"></script>
+    </header>
+<body>
+<div>
+    <div id="vif">
+        v-if 与 v-show
+    </div>
+<!--    <div id="app">-->
+<!--       <span v-if="showName">-->
+<!--                      {{ name }}-->
+<!--        </span>-->
+<!--    </div>-->
+</div>
+<script>
+    const vueInstance = new Vue({
+      template: '<div>{{ name }}</div>',
+      data: {
+      	name: 'vif',
+        showName: true
+      }
+    })
+    vueInstance.$mount('#vif')
+</script>
+</body>
+</html>
